@@ -1,0 +1,358 @@
+Screen:
+    canvas.before:
+        Rectangle:
+            source: '/home/wyche/PycharmProjects/AppProject/Imagens/pngwing.com.png'
+            pos: self.pos
+            size: self.size
+    MDTopAppBar:
+        id: toolbar
+        pos_hint: {"top": 1}
+        title: 'Média Aritmética'
+        left_action_items: [["menu", lambda x: nav_drawer.set_state('toggle')]]
+        right_action_items: [['close',lambda x: app.stop()]]
+        md_bg_color: "brown"
+
+
+
+    MDNavigationLayout:
+        x: toolbar.height
+
+        ScreenManager:
+            id: screen_manager
+
+            Screen:
+                name: "scr 1"
+
+                MDFloatLayout:
+
+                    orientation: 'vertical'
+                    MDIconButton:
+                        id: calc
+                        icon: '/home/wyche/PycharmProjects/AppProject/Imagens/calculator.png'
+                        pos_hint: {'center_x': .5, 'center_y': .68}
+                        icon_size: '170dp'
+                        on_press: app.aritmetica_mostrar()
+                    MDTextField:
+                        id: prin
+                        size_hint: None, None
+                        x_scroll: True
+                        y_scrool: True
+                        mode: 'round'
+                        fill_color_normal: 'brown'
+                        line_color_focus: 'orange'
+                        hint_text_color_normal: 'yellow'
+                        hint_text: '1º NOTA'
+                        pos_hint: {'center_x': .2, 'center_y': .43}
+                        max_text_length: 3
+                        multiline: False
+                    MDTextField:
+                        id: segn
+                        size_hint: None, None
+                        x_scroll: True
+                        y_scrool: True
+                        mode: 'round'
+                        text_color: 'white'
+                        fill_color_normal: 'brown'
+                        line_color_focus: 'orange'
+                        hint_text_color_normal: 'yellow'
+                        hint_text: '2º NOTA'
+                        pos_hint: {'center_x': .4, 'center_y': .43}
+                        max_text_length: 3
+                        multiline: False
+                    MDTextField:
+                        id: tercn
+                        size_hint: None, None
+                        x_scroll: True
+                        y_scrool: True
+                        mode: 'round'
+                        fill_color_normal: 'brown'
+                        line_color_focus: 'orange'
+                        hint_text_color_normal: 'yellow'
+                        hint_text: '3º NOTA'
+                        pos_hint: {'center_x': .6, 'center_y': .43}
+                        max_text_length: 3
+                        multiline: False
+                    MDTextField:
+                        id: quarn
+                        size_hint: None, None
+                        x_scroll: True
+                        y_scrool: True
+                        mode: 'round'
+                        fill_color_normal: 'brown'
+                        line_color_focus: 'orange'
+                        hint_text_color_normal: 'yellow'
+                        hint_text: '4º NOTA'
+                        pos_hint: {'center_x': .8, 'center_y': .43}
+                        max_text_length: 3
+                        multiline: False
+                    MDTextField:
+                        id: show_ma
+                        hint_text: 'Sua média aritmética é:'
+                        font_size: '30dp'
+                        theme_text_color: 'Custom'
+                        text_color_normal: 'yellow'
+                        text_color_focus: 'brown'
+                        mode: 'fill'
+                        hint_text_color_normal: 'orange'
+                        hint_text_color_focus: 'brown'
+                        fill_color_normal: 'brown'
+                        fill_color_focus: 'orange'
+                        size_hint_x: .5
+                        size_hint_y: .2
+                        pos_hint: {'center_x': .39, 'center_y': .15}
+                    MDIconButton:
+                        id: clear_ma
+                        icon: '/home/wyche/PycharmProjects/AppProject/Imagens/delete-empty.png'
+                        icon_size: '50dp'
+                        theme_text_color: 'Custom'
+                        icon_color: 'yellow'
+                        pos_hint: {'center_x': .81, 'center_y': .19}
+                        md_bg_color: 'brown'
+                        on_press: app.limpar_a()
+
+            Screen:
+                name: "scr 2"
+
+                MDFloatLayout:
+                    orientation: 'vertical'
+
+                    MDIconButton:
+                        id: calc_mp
+                        icon: '/home/wyche/PycharmProjects/AppProject/Imagens/calculator.png'
+                        text: 'CALCULAR'
+                        pos_hint: {'center_x': .5, 'center_y': .68}
+                        icon_size: '170dp'
+                        on_press: app.ponderada_mostrar()
+                    MDTextField:
+                        id: notaP1
+                        size_hint: None, None
+                        x_scroll: True
+                        y_scrool: True
+                        mode: 'round'
+                        fill_color_normal: 'brown'
+                        line_color_focus: 'orange'
+                        hint_text_color_normal: 'yellow'
+                        hint_text: '1º NOTA'
+                        pos_hint: {'center_x': .2, 'center_y': .43}
+                        max_text_length: 3
+                        multiline: False
+                    MDTextField:
+                        id: notaP2
+                        size_hint: None, None
+                        x_scroll: True
+                        y_scrool: True
+                        mode: 'round'
+                        text_color: 'white'
+                        fill_color_normal: 'brown'
+                        line_color_focus: 'orange'
+                        hint_text_color_normal: 'yellow'
+                        hint_text: '2º NOTA'
+                        pos_hint: {'center_x': .4, 'center_y': .43}
+                        max_text_length: 3
+                        multiline: False
+                    MDTextField:
+                        id: notaP3
+                        size_hint: None, None
+                        x_scroll: True
+                        y_scrool: True
+                        mode: 'round'
+                        fill_color_normal: 'brown'
+                        line_color_focus: 'orange'
+                        hint_text_color_normal: 'yellow'
+                        hint_text: '3º NOTA'
+                        pos_hint: {'center_x': .6, 'center_y': .43}
+                        max_text_length: 3
+                        multiline: False
+                    MDTextField:
+                        id: notaP4
+                        size_hint: None, None
+                        x_scroll: True
+                        y_scrool: True
+                        mode: 'round'
+                        fill_color_normal: 'brown'
+                        line_color_focus: 'orange'
+                        hint_text_color_normal: 'yellow'
+                        hint_text: '4º NOTA'
+                        pos_hint: {'center_x': .8, 'center_y': .43}
+                        max_text_length: 3
+                        multiline: False
+                    MDTextField:
+                        id: peso1
+                        size_hint: None, None
+                        x_scroll: True
+                        y_scrool: True
+                        mode: 'round'
+                        fill_color_normal: 'brown'
+                        line_color_focus: 'orange'
+                        hint_text_color_normal: 'yellow'
+                        hint_text: '1º PESO'
+                        pos_hint: {'center_x': .2, 'center_y': .33}
+                        max_text_length: 3
+                        multiline: False
+                    MDTextField:
+                        id: peso2
+                        size_hint: None, None
+                        x_scroll: True
+                        y_scrool: True
+                        mode: 'round'
+                        fill_color_normal: 'brown'
+                        line_color_focus: 'orange'
+                        hint_text_color_normal: 'yellow'
+                        hint_text: '2º PESO'
+                        pos_hint: {'center_x': .4, 'center_y': .33}
+                        max_text_length: 3
+                        multiline: False
+                    MDTextField:
+                        id: peso3
+                        size_hint: None, None
+                        x_scroll: True
+                        y_scrool: True
+                        mode: 'round'
+                        fill_color_normal: 'brown'
+                        line_color_focus: 'orange'
+                        hint_text_color_normal: 'yellow'
+                        hint_text: '3º PESO'
+                        pos_hint: {'center_x': .6, 'center_y': .33}
+                        max_text_length: 3
+                        multiline: False
+                    MDTextField:
+                        id: peso4
+                        size_hint: None, None
+                        x_scroll: True
+                        y_scrool: True
+                        mode: 'round'
+                        fill_color_normal: 'brown'
+                        line_color_focus: 'orange'
+                        hint_text_color_normal: 'yellow'
+                        hint_text: '4º PESO'
+                        pos_hint: {'center_x': .8, 'center_y': .33}
+                        max_text_length: 3
+                        multiline: False
+                    MDTextField:
+                        id: mostrar_mp
+                        hint_text: 'Sua média ponderada é:'
+                        font_size: '30dp'
+                        theme_text_color: 'Custom'
+                        text_color_normal: 'yellow'
+                        text_color_focus: 'brown'
+                        mode: 'fill'
+                        hint_text_color_normal: 'orange'
+                        hint_text_color_focus: 'brown'
+                        fill_color_normal: 'brown'
+                        fill_color_focus: 'orange'
+                        size_hint_x: .5
+                        size_hint_y: .2
+                        pos_hint: {'center_x': .39, 'center_y': .15}
+                    MDIconButton:
+                        id: apagar_mp
+                        icon: '/home/wyche/PycharmProjects/AppProject/Imagens/delete-empty.png'
+                        icon_size: '50dp'
+                        theme_text_color: 'Custom'
+                        icon_color: 'yellow'
+                        pos_hint: {'center_x': .81, 'center_y': .19}
+                        md_bg_color: 'brown'
+                        on_press: app.apagar_p()
+            Screen:
+                name: 'scr 3'
+
+                MDFloatLayout:
+                    orientation: 'vertical'
+                    MDLabel:
+                        text: 'MÉDIA ARITMÉTICA'
+                        pos_hint: {'center_x': .9, 'center_y': .84}
+                    Image:
+                        source: '/home/wyche/PycharmProjects/AppProject/Imagens/media_ari.png'
+                        pos_hint: {'center_x': .5, 'center_y': .65}
+                    MDLabel:
+                        text: 'MÉDIA PONDERADA'
+                        pos_hint: {'center_x': .9, 'center_y': .45}
+                    Image:
+                        source: '/home/wyche/PycharmProjects/AppProject/Imagens/media_pond.png'
+                        pos_hint: {'center_x': .5, 'center_y': .25}
+
+            Screen:
+                name: 'scr 4'
+
+                MDFloatLayout:
+                    orientation: 'vertical'
+                    MDFillRoundFlatIconButton:
+                        text: "gabrieltorres570@gmail.com"
+                        icon: "email"
+                        text_color: "yellow"
+                        theme_icon_color: 'Custom'
+                        icon_color: 'yellow'
+                        md_bg_color: "brown"
+                        pos_hint: {'center_x': .5, 'center_y': .7}
+                        on_press: app.copy()
+                    MDIconButton:
+                        icon: '/home/wyche/PycharmProjects/AppProject/Imagens/github.png'
+                        pos_hint: {'center_x': .5, 'center_y': .59}
+                        icon_size: '80dp'
+                        on_press: app.git()
+                    MDIconButton:
+                        icon: '/home/wyche/PycharmProjects/AppProject/Imagens/facebook.png'
+                        pos_hint: {'center_x': .5, 'center_y': .46}
+                        icon_size: '80dp'
+                        on_press: app.face()
+                    MDIconButton:
+                        icon: '/home/wyche/PycharmProjects/AppProject/Imagens/twitter.png'
+                        pos_hint: {'center_x': .5, 'center_y': .34}
+                        icon_size: '80dp'
+                        on_press: app.twit()
+                    MDIconButton:
+                        icon: '/home/wyche/PycharmProjects/AppProject/Imagens/linkedin.png'
+                        pos_hint: {'center_x': .5, 'center_y': .22}
+                        icon_size: '80dp'
+                        on_press: app.linke()
+
+        MDNavigationDrawer:
+            id: nav_drawer
+            md_bg_color: 'brown'
+
+            canvas:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            ContentNavigationDrawer:
+                screen_manager: screen_manager
+                nav_drawer: nav_drawer
+
+                ScrollView:
+                    MDList:
+
+                        OneLineListItem:
+                            text: "Média Aritmética"
+                            theme_text_color: 'Custom'
+                            text_color: 'yellow'
+                            on_press:
+                                app.root.ids.toolbar.title = 'Média Aritmética'
+                                nav_drawer.set_state("close")
+                                screen_manager.current = "scr 1"
+
+                        OneLineListItem:
+                            text: "Média Ponderada"
+                            theme_text_color: 'Custom'
+                            text_color: 'yellow'
+                            on_press:
+                                app.root.ids.toolbar.title = 'Média Ponderada'
+                                nav_drawer.set_state("close")
+                                screen_manager.current = "scr 2"
+
+                        OneLineListItem:
+                            text: "Como Calcular"
+                            theme_text_color: 'Custom'
+                            text_color: 'yellow'
+                            on_press:
+                                app.root.ids.toolbar.title = 'Como Calcular'
+                                nav_drawer.set_state("close")
+                                screen_manager.current = "scr 3"
+
+                        OneLineListItem:
+                            text: "Contatos"
+                            theme_text_color: 'Custom'
+                            text_color: 'yellow'
+                            on_press:
+                                app.root.ids.toolbar.title = 'Contatos'
+                                nav_drawer.set_state("close")
+                                screen_manager.current = "scr 4"
